@@ -1,5 +1,13 @@
 let mapleader = "\<Space>"
 
+nnoremap <leader>vs :vsplit<CR>
+nnoremap <leader>sp :split<CR>
+nnoremap tn :tabnew <C-R>=expand("%:p:h") . "/" <CR>
+nnoremap th :tabprev<CR>
+nnoremap tl :tabnext<CR>
+nnoremap to :tabonly<CR>
+
+
 " Open hotkeys
 map <C-p> :Files<CR>
 nmap <leader>; :Buffers<CR>
@@ -46,8 +54,8 @@ autocmd CursorHold,CursorHoldI *.rs :lua require'lsp_extensions'.inlay_hints{ on
 set signcolumn=yes
 
 " Set updatetime for CursorHold
-" 300ms of no cursor movement to trigger CursorHold
-set updatetime=300
+" 1000 ms of no cursor movement to trigger CursorHold
+set updatetime=1000
 " Show diagnostic popup on cursor hover
 autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
 
