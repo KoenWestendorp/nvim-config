@@ -1,9 +1,14 @@
 call plug#begin('~/.config/nvim/plugged')
 " ## Colorschemes
-Plug 'morhetz/gruvbox'
-Plug 'lifepillar/gruvbox8'
+Plug '~/dev/dot'
+"Plug 'PyGamer0/darc.nvim'
+"Plug 'ellisonleao/gruvbox.nvim'
+Plug 'rktjmp/lush.nvim'
+
+"""" Plug 'morhetz/gruvbox'
+"""" Plug 'lifepillar/gruvbox8'
 Plug 'itchyny/lightline.vim'
-Plug 'owozsh/amora'
+"""" Plug 'owozsh/amora'
 " ## Functionality
 " ### Quality of life
 Plug 'Raimondi/delimitMate'
@@ -14,7 +19,7 @@ Plug 'ciaranm/securemodelines'
 Plug 'editorconfig/editorconfig-vim'
 " ### Completion and snippets
 Plug 'neovim/nvim-lspconfig'
-Plug 'simrat39/rust-tools.nvim'
+"Plug 'simrat39/rust-tools.nvim'
 Plug 'nvim-lua/lsp_extensions.nvim'
 Plug 'nvim-lua/completion-nvim'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}

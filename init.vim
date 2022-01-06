@@ -1,7 +1,7 @@
-source <sfile>:h/init/general.vim
-source <sfile>:h/init/hotkeys.vim
-source <sfile>:h/init/plugins.vim
-source <sfile>:h/init/plugin_settings.vim
-source <sfile>:h/init/lsp.lua
-source <sfile>:h/init/syntax.vim
-source <sfile>:h/init/colors.vim
+source <sfile>:h/preferences/plugins.vim
+source <sfile>:h/preferences/general.vim
+source <sfile>:h/preferences/plugin_settings.vim
+source <sfile>:h/preferences/lsp.lua
+source <sfile>:h/preferences/syntax.vim
+source <sfile>:h/preferences/hotkeys.vim
+source <sfile>:h/preferences/colors.vim

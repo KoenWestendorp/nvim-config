@@ -16,8 +16,8 @@ nmap <leader>; :Buffers<CR>
 nnoremap <leader>cr :!cargo run<cr>
 
 " Pandoc conversions of MarkDown
-nnoremap <leader>h     <cmd>! pandoc --standalone --css $HOME/.config/pandoc/style.css --self-contained -i % -o %.html && open %.html<CR>
-nnoremap <leader>H     <cmd>! pandoc --pdf-engine=xelatex -i % -o %.pdf && open %.pdf<CR>
+nnoremap <leader>h     <cmd>! pandoc --standalone --css $HOME/.config/pandoc/style.css --self-contained -i % -o %.html && xdg-open %.html<CR>
+nnoremap <leader>H     <cmd>! pandoc --pdf-engine=xelatex -i % -o %.pdf && xdg-open %.pdf<CR>
 
 " Code navigation shortcuts
 " as found in :help lsp
@@ -31,33 +31,28 @@ nnoremap <leader>g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
 nnoremap <leader>gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 " rust-analyzer does not yet support goto declaration
 " re-mapped `gd` to definition
-nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
-"nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent>gd    <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent>gde    <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <leader>rr     <cmd>lua vim.lsp.buf.rename()<CR>
 
-" Trigger completion with <tab>
-" found in :help completion
-" Use <Tab> and <S-Tab> to navigate through popup menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" use <Tab> as trigger keys
-imap <Tab> <Plug>(completion_smart_tab)
-imap <S-Tab> <Plug>(completion_smart_s_tab)
+"""" Trigger completion with <tab>
+"""" found in :help completion
+"""" Use <Tab> and <S-Tab> to navigate through popup menu
+"""inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+"""inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+"""
+"""" use <Tab> as trigger keys
+"""imap <Tab> <Plug>(completion_smart_tab)
+"""imap <S-Tab> <Plug>(completion_smart_s_tab)
 
 " Enable type inlay hints
 autocmd CursorHold,CursorHoldI *.rs :lua require'lsp_extensions'.inlay_hints{ only_current_line = false }
-
-
-" have a fixed column for the diagnostics to appear in
-" this removes the jitter when warnings/errors flow in
-set signcolumn=yes
 
 " Set updatetime for CursorHold
 " 1000 ms of no cursor movement to trigger CursorHold
 set updatetime=1000
 " Show diagnostic popup on cursor hover
-autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
+autocmd CursorHold * lua vim.diagnostic.open_float()
 
 " Goto previous/next diagnostic warning/error
 nnoremap <silent> [e <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>

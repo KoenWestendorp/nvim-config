@@ -14,6 +14,7 @@ let g:secure_modelines_allowed_items = [
 
 " Lightline
 let g:lightline = {
+      \ 'colorscheme': 'one',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'readonly', 'filename', 'modified' ] ],

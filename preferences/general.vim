@@ -9,10 +9,6 @@ if has('nvim')
 	" and at the same time a split appears at the bottom where the changes are 
 	" listed. This gives more overview into the substitution action.
     set inccommand=split
-
-	" Control-q quits all buggers (:qa), but if any buffers are unsaved, it
-	" asks for confirmation.
-    noremap <C-q> :confirm qall<CR>
 end
 
 " from http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
@@ -30,7 +26,7 @@ let g:localvimrc_ask = 0
 " # Editor settings
 filetype plugin indent on
 set autoindent
-set timeoutlen=300 " http://stackoverflow.com/questions/2158516/delay-before-o-opens-a-new-line
+set timeoutlen=200 " http://stackoverflow.com/questions/2158516/delay-before-o-opens-a-new-line
 set encoding=utf-8
 set scrolloff=3
 set noshowmode
