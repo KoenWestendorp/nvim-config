@@ -72,11 +72,6 @@ nnoremap ; :
 vnoremap <C-h> :nohlsearch<cr>
 nnoremap <C-h> :nohlsearch<cr>
 
-" Suspend with Ctrl+f
-inoremap <C-f> :sus<cr>
-vnoremap <C-f> :sus<cr>
-nnoremap <C-f> :sus<cr>
-
 " ### Save all, save and close all
 nnoremap <leader>ww <esc>:wa<CR>
 nnoremap <leader>wq <esc>:wqa<CR>
@@ -87,8 +82,9 @@ map H ^
 map L $
 
 nnoremap <leader>f :FZF<CR>
+nnoremap <leader>b :Buffers<CR>
 " <leader>s for Rg search
-noremap <leader>s :Rg
+noremap <leader>s :Rg<CR>
 let g:fzf_layout = { 'down': '~20%' }
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
@@ -122,7 +118,9 @@ inoremap <right> <nop>
 nnoremap <left> :bp<CR>
 nnoremap <right> :bn<CR>
 
-
+" Map cnext and cprev
+nnoremap <leader>cn :cnext<CR>
+nnoremap <leader>cp :cprev<CR>
 
 " <leader><leader> toggles between buffers
 nnoremap <leader><leader> <c-^>
