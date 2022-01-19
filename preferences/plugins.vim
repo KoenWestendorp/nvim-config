@@ -1,6 +1,7 @@
 call plug#begin('~/.config/nvim/plugged')
 " ## Colorschemes
 Plug '~/dev/dot'
+Plug 'KoenWestendorp/dot-colorscheme'
 "Plug 'PyGamer0/darc.nvim'
 "Plug 'ellisonleao/gruvbox.nvim'
 Plug 'rktjmp/lush.nvim'
