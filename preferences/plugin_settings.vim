@@ -6,7 +6,7 @@ let g:secure_modelines_allowed_items = [
                 \ "shiftwidth",  "sw",
                 \ "expandtab",   "et",   "noexpandtab", "noet",
                 \ "filetype",    "ft",
-                \ "foldmethod",  "fdm",
+				\ "foldmethod",  "fdm",
                 \ "readonly",    "ro",   "noreadonly", "noro",
                 \ "rightleft",   "rl",   "norightleft", "norl",
                 \ "colorcolumn"
