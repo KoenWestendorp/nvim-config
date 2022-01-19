@@ -17,7 +17,7 @@ nnoremap <leader>cr :!cargo run<cr>
 
 " Pandoc conversions of MarkDown
 nnoremap <leader>h     <cmd>! pandoc --standalone --css $HOME/.config/pandoc/style.css --self-contained -i % -o %.html && xdg-open %.html<CR>
-nnoremap <leader>H     <cmd>! pandoc --pdf-engine=xelatex -i % -o %.pdf && xdg-open %.pdf<CR>
+nnoremap <leader>H     <cmd>! pandoc --pdf-engine=tectonic -i % -o %.pdf && xdg-open %.pdf<CR>
 
 " Code navigation shortcuts
 " as found in :help lsp
